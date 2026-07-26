@@ -1,0 +1,301 @@
+[
+    {
+        "id": 0,
+        "image": "./pizza/1.webp",
+        "title": "Піца з нектарином, беконом та шинкою котто",
+        "types": [
+            0,
+            1
+        ],
+        "sizes": [
+            26,
+            30,
+            40
+        ],
+        "price": 299,
+        "category": 0,
+        "rating": 4
+    },
+    {
+        "id": 1,
+        "image": "./pizza/2.webp",
+        "title": "Піца з куркою, грибами та беконом",
+        "types": [
+            0
+        ],
+        "sizes": [
+            26,
+            40
+        ],
+        "price": 279,
+        "category": 0,
+        "rating": 6
+    },
+    {
+        "id": 2,
+        "image": "./pizza/3.webp",
+        "title": "Піца з шинкою котто та в’яленими томатами",
+        "types": [
+            0
+        ],
+        "sizes": [
+            26,
+            40
+        ],
+        "price": 299,
+        "category": 1,
+        "rating": 4
+    },
+    {
+        "id": 3,
+        "image": "./pizza/4.webp",
+        "title": "Піца з креветками та ананасами",
+        "types": [
+            1
+        ],
+        "sizes": [
+            26,
+            30,
+            40
+        ],
+        "price": 309,
+        "category": 2,
+        "rating": 2
+    },
+    {
+        "id": 4,
+        "image": "./pizza/5.webp",
+        "title": "Піца мисливська з салямі піканте",
+        "types": [
+            0,
+            1
+        ],
+        "sizes": [
+            26,
+            30,
+            40
+        ],
+        "price": 269,
+        "category": 3,
+        "rating": 8
+    },
+    {
+        "id": 5,
+        "image": "./pizza/6.webp",
+        "title": "Піца з прошутто та каперсами",
+        "types": [
+            0
+        ],
+        "sizes": [
+            30,
+            40
+        ],
+        "price": 269,
+        "category": 2,
+        "rating": 2
+    },
+    {
+        "id": 6,
+        "image": "./pizza/7.webp",
+        "title": "Піца салямі Наполі з Чеддером",
+        "types": [
+            0,
+            1
+        ],
+        "sizes": [
+            26,
+            30,
+            40
+        ],
+        "price": 309,
+        "category": 1,
+        "rating": 9
+    },
+    {
+        "id": 7,
+        "image": "./pizza/8.webp",
+        "title": "Піца з грибами 🍄‍🟫",
+        "types": [
+            0,
+            1
+        ],
+        "sizes": [
+            26,
+            30,
+            40
+        ],
+        "price": 249,
+        "category": 4,
+        "rating": 10
+    },
+    {
+        "id": 8,
+        "image": "./pizza/9.webp",
+        "title": "Піца з шинкою котто, куркою та ананасами",
+        "types": [
+            0,
+            1
+        ],
+        "sizes": [
+            26,
+            30,
+            40
+        ],
+        "price": 299,
+        "category": 5,
+        "rating": 10
+    },
+    {
+        "id": 9,
+        "image": "./pizza/10.webp",
+        "title": "Піца том-ям",
+        "types": [
+            0,
+            1
+        ],
+        "sizes": [
+            26,
+            30,
+            40
+        ],
+        "price": 299,
+        "category": 5,
+        "rating": 7
+    },
+    {
+        "id": 10,
+        "image": "./pizza/11.webp",
+        "title": "Піца 4 смаки",
+        "types": [
+            0,
+            1
+        ],
+        "sizes": [
+            26,
+            30,
+            40
+        ],
+        "price": 289,
+        "category": 0,
+        "rating": 4
+    },
+    {
+        "id": 11,
+        "image": "./pizza/12.webp",
+        "title": "Піца 4 м'яса",
+        "types": [
+            0,
+            1
+        ],
+        "sizes": [
+            26,
+            30,
+            40
+        ],
+        "price": 309,
+        "category": 0,
+        "rating": 4
+    },
+    {
+        "id": 12,
+        "image": "./pizza/13.webp",
+        "title": "Піца з куркою та ананасами",
+        "types": [
+            0,
+            1
+        ],
+        "sizes": [
+            26,
+            30,
+            40
+        ],
+        "price": 269,
+        "category": 0,
+        "rating": 4
+    },
+    {
+        "id": 13,
+        "image": "./pizza/14.webp",
+        "title": "Піца Пепероні",
+        "types": [
+            0,
+            1
+        ],
+        "sizes": [
+            26,
+            30,
+            40
+        ],
+        "price": 279,
+        "category": 0,
+        "rating": 4
+    },
+    {
+        "id": 14,
+        "image": "./pizza/15.webp",
+        "title": "Піца Італьяні",
+        "types": [
+            0,
+            1
+        ],
+        "sizes": [
+            26,
+            30,
+            40
+        ],
+        "price": 319,
+        "category": 0,
+        "rating": 4
+    },
+    {
+        "id": 15,
+        "image": "./pizza/16.webp",
+        "title": "Піца з грушею та дор-блю",
+        "types": [
+            0,
+            1
+        ],
+        "sizes": [
+            26,
+            30,
+            40
+        ],
+        "price": 289,
+        "category": 0,
+        "rating": 4
+    },
+    {
+        "id": 16,
+        "image": "./pizza/17.webp",
+        "title": "Піца Маргарита",
+        "types": [
+            0,
+            1
+        ],
+        "sizes": [
+            26,
+            30,
+            40
+        ],
+        "price": 219,
+        "category": 0,
+        "rating": 4
+    },
+    {
+        "id": 17,
+        "image": "./pizza/18.webp",
+        "title": "Піца Сирний мікс",
+        "types": [
+            0,
+            1
+        ],
+        "sizes": [
+            26,
+            30,
+            40
+        ],
+        "price": 269,
+        "category": 0,
+        "rating": 4
+    }
+]

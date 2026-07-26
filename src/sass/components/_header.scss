@@ -1,0 +1,51 @@
+@import '../variables';
+
+.logo-wrapper {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  @media (max-width:768px) {
+    gap: 20px;
+    flex-direction: column;
+  }
+}
+
+.header {
+  border-bottom: 1px solid $gray-line;
+  padding: 40px 0;
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @media (max-width:768px) {
+      gap: 20px;
+      flex-direction: column;
+    }
+  }
+
+  &__logo {
+    display: flex;
+
+    img {
+      margin-right: 15px;
+      width: clamp(30px, 3rem, 50px);
+      height: clamp(30px, 3em, 50px);
+    }
+
+    h1 {
+      color: #181818;
+      font-size: 24px;
+      letter-spacing: 1%;
+      text-transform: uppercase;
+      font-weight: 800;
+    }
+
+    p {
+      color: #7b7b7b;
+    }
+  }
+
+
+}
