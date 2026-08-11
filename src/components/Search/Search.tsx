@@ -1,12 +1,41 @@
-import { useContext } from 'react';
+import debounce from 'lodash.debounce';
+import React, { useCallback, useContext, useRef, useState } from 'react';
+// import { SearchContext } from '../../components/app/App';
 
-import { SearchContext } from '../../components/app/App';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectFilter, setSearchValue } from '../../redux/slices/filter/filterSlice';
 
 import './search.scss';
 
 
-export function Search() {
-    const { searchValue, setSearchValue } = useContext(SearchContext);
+
+
+
+export const Search: React.FC = () => {
+    const dispatch = useDispatch();
+    const [value, setValue] = useState('')
+    const { searchValue } = useSelector(selectFilter);
+    // const { searchValue, setSearchValue } = useContext(SearchContext);
+    const inputRef = useRef<HTMLInputElement>(null);
+
+
+    const onClickClear = () => {
+        setValue('');
+        dispatch(setSearchValue(''))
+        if (inputRef.current) {
+            inputRef.current.focus();
+        }
+    }
+
+    const updateSearchValue = useCallback(
+        debounce((str) => {
+            dispatch(setSearchValue(str))
+        }, 250), [])
+
+    const onChangeInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setValue(e.target.value)
+        updateSearchValue(e.target.value)
+    }
     return (<div className='search-wrapper'>
         <svg
             className='search-icon'
@@ -41,9 +70,9 @@ export function Search() {
                 y2="20.366"
             />
         </svg>
-        <input value={searchValue} onChange={(e) => setSearchValue(e.target.value)} type="text" className='search-input' placeholder="Пошук піци..." />
+        <input ref={inputRef} value={value} onChange={onChangeInput} type="text" className='search-input' placeholder="Пошук піци..." />
         {searchValue && <svg
-            onClick={() => setSearchValue('')}
+            onClick={onClickClear}
             className='input-close'
             viewBox="0 0 20 20"
             xmlns="http://www.w3.org/2000/svg">

@@ -1,13 +1,27 @@
+import React from "react";
 import { Link } from "react-router-dom";
 import { CartEmpty } from "../components/CartEmpty";
-import { CartItem } from "../components/CartItem";
+import { CartItemBlock } from "../components/CartItem";
+import { useSelector, useDispatch } from 'react-redux';
+import { clearItems, selectCart } from "../redux/slices/cart/cartSlice";
 
-export function Cart() {
+
+export const Cart: React.FC = () => {
+    const dispatch = useDispatch()
+
+    // const { items, totalPrice } = useSelector(state => state.cart)
+    const { items, totalPrice } = useSelector(selectCart)
+
+    const totalCount = items.reduce((sum: number, item: any) => sum + item.count, 0)
+
+    const onClickClear = () => {
+        if (window.confirm('Are you sure you want to empty the cart?')) {
+            dispatch(clearItems())
+        }
+    }
     return (
         <div>
-            <CartEmpty />
-
-            <div className="cart">
+            {items.length === 0 ? <CartEmpty /> : (<div className="cart">
                 <div className="cart__top">
                     <h2 className="content__title">
                         <svg
@@ -42,17 +56,16 @@ export function Cart() {
                             <path d="M8.33337 9.16667V14.1667" stroke="#B6B6B6" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
                             <path d="M11.6666 9.16667V14.1667" stroke="#B6B6B6" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
                         </svg>
-                        <span>Очистити кошик</span>
+                        <span onClick={onClickClear}>Очистити кошик</span>
                     </div>
                 </div>
                 <div className="content__items__cart">
-                    <CartItem />
-                    <CartItem />
+                    {items.map((item: any) => <CartItemBlock key={item.id} {...item} />)}
                 </div>
                 <div className="cart__bottom">
                     <div className="cart__bottom-details">
-                        <span> Всього піц: <b>3 шт.</b> </span>
-                        <span> Сума замовлення: <b>900 ₴</b> </span>
+                        <span> Всього піц: <b>{totalCount} шт.</b> </span>
+                        <span> Сума замовлення: <b>{totalPrice} ₴</b> </span>
                     </div>
                     <div className="cart__bottom-buttons">
                         <Link to="/" className="button button--outline button--add go-back-btn">
@@ -66,6 +79,6 @@ export function Cart() {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>)}
         </div>)
 }

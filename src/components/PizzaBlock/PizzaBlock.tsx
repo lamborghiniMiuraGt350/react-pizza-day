@@ -1,23 +1,62 @@
-import { useEffect, useState } from "react"
-import { ibg } from "../../utils/ibg";
+import React, { useEffect, useState } from "react"
+import { Link } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
 
-export function PizzaBlock({ title, price, image, sizes, types }) {
+import { ibg } from "../../utils/ibg";
+import { addItem, selectCartItemById } from '../../redux/slices/cart/cartSlice';
+import { CartItem } from "../../redux/slices/cart/types";
+
+
+
+type PizzaBlockProps = {
+    id: string;
+    title: string;
+    price: number;
+    image: string;
+    sizes: number[];
+    types: number[];
+}
+
+
+export const PizzaBlock: React.FC<PizzaBlockProps> = ({ id, title, price, image, sizes, types }) => {
+    const dispatch = useDispatch()
+
+    // const cartItem = useSelector((state) => state.cart.items.find(obj => obj.id === id))
+    const cartItem = useSelector(selectCartItemById(id))
+
+    const typesNames = ['тонке', 'традиційне'];
     const [activeType, setActiveType] = useState(0);
     const [activeSize, setActiveSize] = useState(0);
-    const typesNames = ['тонке', 'традиційне'];
+
+    const addedCount = cartItem ? cartItem.count : 0
 
     useEffect(() => {
         ibg()
     }, [])
+
+    const onClickAdd = () => {
+        const item: CartItem = {
+            id: id,
+            title: title,
+            price: price,
+            image: image,
+            type: typesNames[activeType],
+            size: sizes[activeSize],
+            count: 0
+        }
+        dispatch(addItem(item))
+    }
     return (
         <div className="pizza-block">
-            <div className="pizza-block-image ibg">
-                <img
-                    className="pizza-block__image"
-                    src={`${process.env.PUBLIC_URL}/${image}`}
-                    alt="Піца"
-                />
-            </div>
+            <Link to={`/pizza/${id}`}>
+                <div className="pizza-block-image ibg">
+                    <img
+                        className="pizza-block__image"
+                        src={`${process.env.PUBLIC_URL}/${image}`}
+                        alt="Піца"
+                    />
+                </div>
+            </Link>
             <div className="pizza-block-inner">
                 <h4 className="pizza-block__title">{title}</h4>
                 <div className="pizza-block__selector">
@@ -34,7 +73,7 @@ export function PizzaBlock({ title, price, image, sizes, types }) {
                 </div>
                 <div className="pizza-block__bottom">
                     <div className="pizza-block__price">від {price} ₴</div>
-                    <button className="button button--outline button--add">
+                    <button className="button button--outline button--add" onClick={onClickAdd}>
                         <svg
                             width="12"
                             height="12"
@@ -48,10 +87,10 @@ export function PizzaBlock({ title, price, image, sizes, types }) {
                             />
                         </svg>
                         <span >Додати</span>
-                        <i >0</i>
+                        <i > {addedCount}</i>
                     </button>
                 </div>
             </div>
-        </div>
+        </div >
     )
 }

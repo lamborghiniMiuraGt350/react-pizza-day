@@ -1,19 +1,54 @@
-export function CartItem() {
-    return (<div className="cart__item">
+
+import { useDispatch } from "react-redux";
+import React from "react";
+import clsx from "clsx";
+
+import { addItem, removeItem, minusItem } from "../redux/slices/cart/cartSlice";
+import { CartItem } from "../redux/slices/cart/types";
+
+type CartItemProps = {
+    id: string;
+    title: string;
+    price: number;
+    count: number;
+    image: string;
+    type: string;
+    size: number;
+}
+
+export const CartItemBlock: React.FC<CartItemProps> = ({ id, title, price, count, image, type, size }) => {
+    const dispatch = useDispatch()
+
+    const onClickPlus = () => {
+        dispatch(addItem({
+            id
+        } as CartItem))
+    }
+    const onClickMinus = () => {
+        dispatch(minusItem(id))
+    }
+    const onClickRemove = () => {
+        if (window.confirm('Are you sure you want to remove?')) {
+            dispatch(removeItem(id))
+        }
+    }
+
+    return (count ? (<div className="cart__item">
         <div className="cart__item-img">
-            <img className="pizza-block__image" src={`${process.env.PUBLIC_URL}/${'./pizza/1.webp'}`} alt="Pizza" />
+            <img className="pizza-block__image" src={`${process.env.PUBLIC_URL}/${image}`} alt="Pizza" />
         </div>
         <div className="cart__item-info">
-            <h3>Пица</h3>
+            <h3>{title}</h3>
             <p>
-                тонкая, 26 см.
+                {type}, {size} см.
             </p>
         </div>
         <div className="cart__item-count">
             <button
-                // disabled={count === 1}
-                // onClick={onClickMinus}
-                className="button button--outline button--circle cart__item-count-minus">
+                disabled={count === 1}
+                onClick={onClickMinus}
+                className={clsx("button button--outline button--circle cart__item-count-minus",
+                    { 'cart__item-count-minus--disabled': count === 1 })}>
                 <svg
                     width="10"
                     height="10"
@@ -28,9 +63,9 @@ export function CartItem() {
                         fill="#EB5A1E"></path>
                 </svg>
             </button>
-            <b>{10}</b>
+            <b>{count}</b>
             <button
-                // onClick={onClickPlus}
+                onClick={onClickPlus}
                 className="button button--outline button--circle cart__item-count-plus">
                 <svg
                     width="10"
@@ -48,12 +83,12 @@ export function CartItem() {
             </button>
         </div>
         <div className="cart__item-price">
-            <b>{100} ₴</b>
+            <b>{price * count} ₴</b>
         </div>
         <div className="cart__item-remove">
-            <div 
-            // onClick={onClickRemove} 
-            className="button button--outline button--circle">
+            <div
+                onClick={onClickRemove}
+                className="button button--outline button--circle">
                 <svg
                     width="10"
                     height="10"
@@ -69,5 +104,5 @@ export function CartItem() {
                 </svg>
             </div>
         </div>
-    </div>)
+    </div>) : null)
 }

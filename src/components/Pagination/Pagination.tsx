@@ -1,10 +1,16 @@
-// import './pagination.scss'
+import React from 'react';
 import ReactPaginate from 'react-paginate';
 
-
+// import './pagination.scss'
 import styles from './pagination.module.scss';
 
-export const Pagination = ({ currentPage, onChangePage }) => (
+
+type PaginationProps = {
+    currentPage: number;
+    onChangePage: (page: number) => void;
+}
+
+export const Pagination: React.FC<PaginationProps> = ({ currentPage, onChangePage }) => (
     <ReactPaginate
         className={styles.pagination}
         breakLabel="..."

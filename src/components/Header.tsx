@@ -1,26 +1,48 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+
 import logo from '../assets/img/logo.png';
+
 import { Search } from './Search/Search';
+import { selectCart } from '../redux/slices/cart/cartSlice';
+import { useEffect, useRef } from 'react';
+
+
 
 export function Header() {
+  const { totalPrice, items } = useSelector(selectCart)
+  const { pathname } = useLocation();
+  const isMounted = useRef(false);
+  console.log(pathname);
+
+  useEffect(() => {
+    if (isMounted.current) {
+      const json = JSON.stringify(items);
+      console.log(json);
+      localStorage.setItem('cart', json)
+    }
+    isMounted.current = true;
+  }, [items])
+
+  const totalCount = items.reduce((sum: number, item: any) => sum + item.count, 0)
   return (
     <header className="header">
       <div className="container">
         <div className='logo-wrapper'>
           <Link to="/">
             <div className="header__logo">
-              <img  src={logo} alt="Pizza logo" />
+              <img src={logo} alt="Pizza logo" />
               <div>
                 <h1>React Pizza Day</h1>
                 <p>найсмачніша піца у всесвіті</p>
               </div>
             </div>
           </Link>
-          <Search />
+          {pathname !== '/cart' && <Search />}
         </div>
         <div className="header__cart">
           <Link to="/cart" className="button button--cart">
-            <span>1000 ₴</span>
+            <span>{totalPrice} ₴</span>
             <div className="button__delimiter"></div>
             <svg
               width="18"
@@ -51,7 +73,7 @@ export function Header() {
                 strokeLinejoin="round"
               />
             </svg>
-            <span>{123}</span>
+            <span>{totalCount}</span>
           </Link>
         </div>
       </div>
