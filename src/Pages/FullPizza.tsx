@@ -43,3 +43,4 @@ export const FullPizza: React.FC = () => {
         </div>
     </div>
 }
+export default FullPizza;

@@ -10,9 +10,8 @@ import { useAppDispatch } from "../redux/store";
 import { PizzaBlock } from "../components/PizzaBlock/PizzaBlock";
 import { Sort } from "../components/Sort";
 import { Categories } from "../components/Categories";
-import { NotFound } from "./NotFound";
 import { Pagination } from "../components/Pagination/Pagination";
-
+import NotFound from "./NotFound";
 
 import Skeleton from "../components/PizzaBlock/Skeleton";
 

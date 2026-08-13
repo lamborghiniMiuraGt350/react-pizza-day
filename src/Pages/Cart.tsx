@@ -6,7 +6,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { clearItems, selectCart } from "../redux/slices/cart/cartSlice";
 
 
-export const Cart: React.FC = () => {
+const Cart: React.FC = () => {
     const dispatch = useDispatch()
 
     // const { items, totalPrice } = useSelector(state => state.cart)
@@ -74,11 +74,15 @@ export const Cart: React.FC = () => {
                             </svg>
                             <span>Повернутися назад</span>
                         </Link>
-                        <div className="button pay-btn">
-                            <span>Оплатити зараз</span>
-                        </div>
+                        <Link to='/order' onClick={() => dispatch(clearItems())}>
+                            <div className="button pay-btn">
+                                <span>Оплатити зараз</span>
+                            </div>
+                        </Link>
                     </div>
                 </div>
             </div>)}
         </div>)
 }
+
+export default Cart;
