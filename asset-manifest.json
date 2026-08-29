@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/react-pizza-day/static/css/main.78c5955f.css",
+    "main.js": "/react-pizza-day/static/js/main.7edc9259.js",
+    "static/js/986.5ddb521f.chunk.js": "/react-pizza-day/static/js/986.5ddb521f.chunk.js",
+    "static/js/340.0866b958.chunk.js": "/react-pizza-day/static/js/340.0866b958.chunk.js",
+    "static/js/219.050c1492.chunk.js": "/react-pizza-day/static/js/219.050c1492.chunk.js",
+    "static/media/logo.png": "/react-pizza-day/static/media/logo.d2f70242239efc405e6a.png",
+    "static/media/empty-cart.png": "/react-pizza-day/static/media/empty-cart.db905d1f4b063162f25b.png",
+    "index.html": "/react-pizza-day/index.html",
+    "main.78c5955f.css.map": "/react-pizza-day/static/css/main.78c5955f.css.map",
+    "main.7edc9259.js.map": "/react-pizza-day/static/js/main.7edc9259.js.map",
+    "986.5ddb521f.chunk.js.map": "/react-pizza-day/static/js/986.5ddb521f.chunk.js.map",
+    "340.0866b958.chunk.js.map": "/react-pizza-day/static/js/340.0866b958.chunk.js.map",
+    "219.050c1492.chunk.js.map": "/react-pizza-day/static/js/219.050c1492.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.78c5955f.css",
+    "static/js/main.7edc9259.js"
+  ]
+}
