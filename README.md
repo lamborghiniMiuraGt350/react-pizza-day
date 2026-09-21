@@ -1,70 +1,44 @@
-# Getting Started with Create React App
+# 🍕 React Pizza Day
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Пет-проект интернет-магазина пиццы, реализованный на React с использованием TypeScript и Redux Toolkit. Проект имитирует реальный e-commerce флоу: от каталога товаров до оформления заказа.
 
-## Available Scripts
+**🔗 Демо:** [ссылка на GitHub Pages]
+**📦 Репозиторий:** github.com/lamborghiniMiuraGt350/react-pizza-day
 
-In the project directory, you can run:
+## Функциональность
 
-### `npm start`
+- 📋 **Каталог товаров** — список пицц с изображениями, ценами и вариантами (размер, тип теста)
+- 🔍 **Фильтрация и сортировка** — фильтр по категориям, сортировка по цене/популярности/алфавиту
+- 🛒 **Корзина** — добавление/удаление товаров, изменение количества, подсчёт итоговой суммы
+- 💾 **Сохранение состояния корзины** между сессиями
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Технологии
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+| Категория | Стек |
+|---|---|
+| Язык | TypeScript |
+| Библиотека UI | React |
+| State management | Redux Toolkit |
+| Стилизация | *(укажи: CSS Modules / Sass / styled-components — что использовал)* |
+| Сборка | *(укажи: Vite / CRA)* |
+| Деплой | GitHub Pages |
 
-### `npm test`
+## Что я отработал в этом проекте
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Организацию состояния приложения через Redux Toolkit (slices, async thunks при необходимости)
+- Типизацию компонентов и стора с помощью TypeScript
+- Работу с переиспользуемыми React-компонентами и пропсами
+- Логику фильтрации и сортировки данных на клиенте
 
-### `npm run build`
+## Запуск локально
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+git clone https://github.com/lamborghiniMiuraGt350/react-pizza-day.git
+cd react-pizza-day
+npm install
+npm run dev
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Скриншоты
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+*(добавь 1-2 скриншота интерфейса — каталог и корзина — это сильно повышает доверие к проекту)*
