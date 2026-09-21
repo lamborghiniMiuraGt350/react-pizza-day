@@ -2,7 +2,7 @@
 
 Пет-проєкт інтернет-магазину піци, реалізований на React з використанням TypeScript та Redux Toolkit. Проєкт імітує реальний e-commerce флоу: від каталогу товарів до оформлення замовлення.
 
-**🔗 Демо:** [посилання на GitHub Pages]
+**🔗 Демо:**  https://lamborghinimiuragt350.github.io/react-pizza-day/
 **📦 Репозиторій:** github.com/lamborghiniMiuraGt350/react-pizza-day
 
 ## Функціонал
@@ -19,8 +19,8 @@
 | Мова | TypeScript |
 | UI-бібліотека | React |
 | State management | Redux Toolkit |
-| Стилізація | *(вкажи: CSS Modules / Sass / styled-components — що використовував)* |
-| Збірка | *(вкажи: Vite / CRA)* |
+| Стилізація | SCSS |
+| Збірка | CRA |
 | Деплой | GitHub Pages |
 
 ## Що я відпрацював у цьому проєкті
